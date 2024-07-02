@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -20,83 +21,59 @@
             margin: 50px auto;
             background-color: #ffffff;
             padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .left-container,
-        .right-container {
-            flex: 1;
-            width: 100%;
-            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
         h2 {
             text-align: center;
             margin-top: 0;
-            color: #333;
         }
 
         textarea {
             width: 100%;
-            height: 120px;
+            height: 100px;
             resize: vertical;
-            padding: 10px;
+            padding: 5px;
             border: 1px solid #ccc;
-            border-radius: 4px;
-            margin-bottom: 15px;
-        }
-
-        .box-container {
-            display: flex;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-
-        .box-container textarea {
-            flex: 1;
-            margin-right: 10px;
+            border-radius: 3px;
+            margin-bottom: 10px;
         }
 
         button {
-            padding: 10px 15px;
-            background-color: #4CAF50;
-            color: #ffffff;
+            padding: 10px 20px;
+            margin: 10px;
             border: none;
-            border-radius: 4px;
+            border-radius: 3px;
             cursor: pointer;
-            font-size: 14px;
+            font-size: 16px;
         }
 
         .extract-button {
-            width: 100%;
-            margin-bottom: 20px;
+            background-color: #4CAF50;
+            color: #ffffff;
         }
 
         .copy-button {
             background-color: #2196F3;
+            color: #ffffff;
         }
 
         .fix-button {
             background-color: #FF9800;
+            color: #ffffff;
         }
 
         .refresh-button {
-            padding: 10px 15px;
-            background-color: #03A9F4;
+            background-color: lightblue;
             color: #ffffff;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 14px;
-            margin-left: 10px;
         }
 
         .footer {
             text-align: center;
             font-size: 12px;
             margin-top: 20px;
-            color: #777;
+            color: #777777;
         }
 
         .doi-circle {
@@ -107,25 +84,20 @@
             width: 50px;
             height: 50px;
             border-radius: 50%;
-            background-color: #888;
+            background-color: lightgray;
             display: flex;
             justify-content: center;
             align-items: center;
             font-weight: bold;
             font-size: 20px;
-            color: #fff;
+            color: white;
         }
 
-        .abstract-container {
-            margin-top: 20px;
-        }
-
-        #extractedAbstract,
         #extractedReferences {
             white-space: pre-line;
             padding: 10px;
             border: 1px solid #ccc;
-            border-radius: 4px;
+            border-radius: 3px;
             margin-top: 10px;
             background-color: #f9f9f9;
         }
@@ -139,22 +111,16 @@
 
 <body>
     <div class="container">
-        <div class="left-container">
-            <h2>Fix References - PPH 
-                <button class="refresh-button" onclick="location.reload()">Refresh</button>
-            </h2>
-            <textarea id="input" placeholder="Paste the text here"></textarea>
-            <button class="extract-button" onclick="extractText()">Extract</button>
-        </div>
-        <div class="right-container">
-            <div class="references-container">
-                <h2>Extracted References</h2>
-                <div id="extractedReferences" contenteditable="true"></div>
-                <div class="box-container">
-                    <button class="copy-button" onclick="copyToClipboard()">Copy</button>
-                    <button class="fix-button" onclick="fixHighlightedText()">Fix</button>
-                </div>
-            </div>
+        <h2>FIX REFERENCES - PPH 
+            <button class="refresh-button" onclick="location.reload()">Refresh</button>
+        </h2>
+        <textarea id="input" placeholder="Paste the text here"></textarea>
+        <button class="extract-button" onclick="extractText()">Extract</button>
+        <div>
+            <h2>Extracted References</h2>
+            <div id="extractedReferences" contenteditable="true"></div>
+            <button class="copy-button" onclick="copyToClipboard()">Copy</button>
+            <button class="fix-button" onclick="fixHighlightedText()">Fix</button>
         </div>
     </div>
     <div class="doi-circle" id="doiCircle"></div>
