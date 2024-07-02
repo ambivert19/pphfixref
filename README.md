@@ -1,4 +1,4 @@
-
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -21,35 +21,37 @@
             margin: 50px auto;
             background-color: #ffffff;
             padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
 
         .left-container,
         .right-container {
             flex: 1;
-            margin-right: 20px;
+            width: 100%;
+            margin-bottom: 20px;
         }
 
         h2 {
             text-align: center;
             margin-top: 0;
+            color: #333;
         }
 
         textarea {
             width: 100%;
-            height: 100px;
+            height: 120px;
             resize: vertical;
-            padding: 5px;
+            padding: 10px;
             border: 1px solid #ccc;
-            border-radius: 3px;
-            margin-bottom: 10px;
+            border-radius: 4px;
+            margin-bottom: 15px;
         }
 
         .box-container {
             display: flex;
             align-items: center;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
         }
 
         .box-container textarea {
@@ -57,26 +59,19 @@
             margin-right: 10px;
         }
 
-        .box-container button,
-        .extract-button,
-        .copy-button,
-        .fix-button {
-            padding: 5px 10px;
+        button {
+            padding: 10px 15px;
             background-color: #4CAF50;
             color: #ffffff;
             border: none;
-            border-radius: 3px;
+            border-radius: 4px;
             cursor: pointer;
+            font-size: 14px;
         }
 
         .extract-button {
             width: 100%;
             margin-bottom: 20px;
-        }
-
-        .copy-button,
-        .fix-button {
-            margin-left: 10px;
         }
 
         .copy-button {
@@ -88,19 +83,21 @@
         }
 
         .refresh-button {
-            padding: 5px 10px;
-            background-color: lightblue;
+            padding: 10px 15px;
+            background-color: #03A9F4;
             color: #ffffff;
             border: none;
-            border-radius: 3px;
+            border-radius: 4px;
             cursor: pointer;
+            font-size: 14px;
+            margin-left: 10px;
         }
 
         .footer {
             text-align: center;
             font-size: 12px;
             margin-top: 20px;
-            color: #777777;
+            color: #777;
         }
 
         .doi-circle {
@@ -111,13 +108,13 @@
             width: 50px;
             height: 50px;
             border-radius: 50%;
-            background-color: lightgray;
+            background-color: #888;
             display: flex;
             justify-content: center;
             align-items: center;
             font-weight: bold;
             font-size: 20px;
-            color: white;
+            color: #fff;
         }
 
         .abstract-container {
@@ -129,13 +126,9 @@
             white-space: pre-line;
             padding: 10px;
             border: 1px solid #ccc;
-            border-radius: 3px;
+            border-radius: 4px;
             margin-top: 10px;
             background-color: #f9f9f9;
-        }
-
-        .references-container {
-            margin-top: 20px;
         }
 
         .highlight {
@@ -148,7 +141,7 @@
 <body>
     <div class="container">
         <div class="left-container">
-            <h2> FIX REFERENCES  -  PPH 
+            <h2>Fix References - PPH 
                 <button class="refresh-button" onclick="location.reload()">Refresh</button>
             </h2>
             <textarea id="input" placeholder="Paste the text here"></textarea>
@@ -158,8 +151,10 @@
             <div class="references-container">
                 <h2>Extracted References</h2>
                 <div id="extractedReferences" contenteditable="true"></div>
-                <button class="copy-button" onclick="copyToClipboard()">Copy</button>
-                <button class="fix-button" onclick="fixHighlightedText()">Fix</button>
+                <div class="box-container">
+                    <button class="copy-button" onclick="copyToClipboard()">Copy</button>
+                    <button class="fix-button" onclick="fixHighlightedText()">Fix</button>
+                </div>
             </div>
         </div>
     </div>
